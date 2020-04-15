@@ -1,4 +1,4 @@
-package karate_chop
+package v1
 
 func Chop(findMe int, numbers []int) int {
 
