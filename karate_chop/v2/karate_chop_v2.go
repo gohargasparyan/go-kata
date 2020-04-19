@@ -12,7 +12,7 @@ func chop(findMe int, numbers []int, startIdx, endIdx int) int {
 		} else if numbers[median] > findMe {
 			return chop(findMe, numbers, startIdx, median - 1)
 		} else {
-			return checkIsAtIdx(numbers, median, findMe)
+			return median
 		}
 	}
 
