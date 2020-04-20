@@ -1,7 +1,7 @@
 package v1
 
 import (
-	common "github.com/gohargasparyan/go-kata/karate_chop/common"
+	"github.com/gohargasparyan/go-kata/karate_chop/common"
 	"testing"
 )
 

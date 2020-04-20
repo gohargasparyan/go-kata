@@ -1,32 +1,35 @@
 package v1
 
+import "fmt"
+
 func Chop(findMe int, numbers []int) int {
-	return chop(findMe, numbers, 0)
-}
+	startIdx := 0
+	endIdx := len(numbers) - 1
+	i := 0
 
-func chop(findMe int, numbers []int, slicePositionInInitialArray int) int {
-	length := len(numbers)
-	if length > 1 {
-		median := length / 2
-		if numbers[median] < findMe {
-			return chop(findMe, numbers[median:], slicePositionInInitialArray + median)
-		} else if numbers[median] > findMe {
-			return chop(findMe, numbers[:median], slicePositionInInitialArray)
-		} else {
-			return checkIsAtIdx(numbers, median, findMe, slicePositionInInitialArray)
+	for {
+		if endIdx <= startIdx {
+			break
 		}
+		i++
 
+		median := (startIdx + endIdx) / 2
+
+		if numbers[median] < findMe {
+			startIdx = median + 1
+		} else if numbers[median] > findMe {
+			endIdx = median -1
+		} else {
+			fmt.Println(i)
+			return median
+		}
 	}
 
-	return checkIsAtIdx(numbers, 0, findMe, slicePositionInInitialArray)
-}
+	fmt.Println(i)
 
-func checkIsAtIdx(numbers []int, idx int, findMe, slicePositionInInitialArray int) int {
-	if idx == len(numbers) || numbers[idx] != findMe {
+	if len(numbers) == 0 || numbers[startIdx] != findMe {
 		return -1
-	} else {
-		return idx + slicePositionInInitialArray
 	}
+
+	return startIdx
 }
-
-

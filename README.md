@@ -34,4 +34,8 @@ Similar experience, the code is easier for me to come back and understand, prefe
 This version is adding unnecessary step of calculating the position of the slice in the initial array. 
 It is complicated version of previous one with not much of an added value. 
 
-# to be continued
+# Version 4 (iterative approach different variation)
+Really hard to come up with new solutions, I am going to re-implement iterative approach slightly different.
+Version 1 and Version 4 are quite similar, but if you look closely, after calculating median, version one checks if 
+number is greater or not and then chops again, while in version 4 it also checks if number we are looking for is in median, 
+which saves additional iteration. So in fact Version 4 is saving additional iteration and therefore is more effective.
