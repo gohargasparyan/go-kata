@@ -39,3 +39,8 @@ Really hard to come up with new solutions, I am going to re-implement iterative 
 Version 1 and Version 4 are quite similar, but if you look closely, after calculating median, version one checks if 
 number is greater or not and then chops again, while in version 4 it also checks if number we are looking for is in median, 
 which saves additional iteration. So in fact Version 4 is saving additional iteration and therefore is more effective.
+
+# Version 5 (tailing Recursion)
+Version 5 is implementation with tailing recursion, meaning the recursive call is the last thing executed by the function.
+Interesting to see if there is difference in execution time with Version. It is better readable for me though than Version 2, 
+since recursive call is done in one line.
