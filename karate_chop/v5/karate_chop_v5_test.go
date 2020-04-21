@@ -8,3 +8,7 @@ import (
 func TestChop(t *testing.T) {
 	common.TestKarateChop(t, Chop)
 }
+
+func Benchmark(b *testing.B) {
+	common.Benchmark(b, Chop)
+}

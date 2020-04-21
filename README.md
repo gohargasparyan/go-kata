@@ -19,8 +19,6 @@ to run the tests
 ```bash
 $  go test ./... -test.v
 ```
-# Benchmarking
-.. todo
 
 # Notes on experience
 # Version 1 ( iterative approach)
@@ -44,3 +42,15 @@ which saves additional iteration. So in fact Version 4 is saving additional iter
 Version 5 is implementation with tailing recursion, meaning the recursive call is the last thing executed by the function.
 Interesting to see if there is difference in execution time with Version. It is better readable for me though than Version 2, 
 since recursive call is done in one line.
+
+# Benchmarking
+In order to run benchmarks 
+```bash
+$  go test ./... -bench=.
+```
+* After benchmarking we see that iterative approaches (V1 and V4) are performing better and V4 is slightly better. 
+* Tailing Recursion (V5) shows to be slightly more performanct than Recursion (V2)
+
+# Conclusion
+In terms of code readability and maintainability my favourites are V1, V4, V5. Since V4 performs best among them, 
+then that would be the one going to production.
